@@ -1,26 +1,32 @@
-
 pipeline {
-    agent any
-
+    agent { 
+        node {
+            label 'jenkins-agent-goes-here'
+            }
+      }
     stages {
         stage('Build') {
             steps {
-                // Perform build steps here
-                sh 'npm install' // Example build step
+                echo "Building.."
+                sh '''
+                echo "doing build stuff.."
+                '''
             }
         }
-        
         stage('Test') {
             steps {
-                // Perform testing steps here
-                sh 'npm test' // Example test step
+                echo "Testing.."
+                sh '''
+                echo "doing test stuff..
+                '''
             }
         }
-        
-        stage('Deploy') {
+        stage('Deliver') {
             steps {
-                // Perform deployment steps here
-                sh 'npm run deploy' // Example deployment step
+                echo 'Deliver....'
+                sh '''
+                echo "doing delivery stuff.."
+                '''
             }
         }
     }
