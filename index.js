@@ -9,7 +9,7 @@ app.get('/', (req, res) => {
     res.send("<h3>Online customer</h3>");
 });
 app.get("/chance", (req, res) => {
-    res.temp
+    res.render('chance');
 })
 
 app.listen(3000, ()=>{
